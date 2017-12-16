@@ -8,12 +8,12 @@ class Song
 
   def initialize(name, artist, genre)
     @genre = genre
-    @artists = artist
+    @artist = artist
     @name = name
 
     @@count += 1
     @@genres << genre
-    @@artists << artist
+    @@artist << artist
   end
 
   def self.count
@@ -21,7 +21,7 @@ class Song
   end
 
   def self.artists
-    @@artists.uniq
+    @@artist.uniq
   end
 
   def self.genres
@@ -31,7 +31,7 @@ class Song
   def self.artist_count
 
     artist_count = {}
-    @@artists.each do |artist|
+    @@artist.each do |artist|
       if artist_count.include?(artist)
         artist_count[artist] += 1
       else
